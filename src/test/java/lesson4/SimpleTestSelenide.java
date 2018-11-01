@@ -9,13 +9,9 @@ import org.testng.annotations.Test;
 import java.util.concurrent.TimeUnit;
 
 import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$$;
 import static java.lang.System.setProperty;
 import static org.testng.Assert.assertEquals;
 
-/**
- * Created by Timur Bogdanov on 11.10.18.
- */
 public class SimpleTestSelenide {
 
     @Test

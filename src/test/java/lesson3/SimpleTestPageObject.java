@@ -9,10 +9,11 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import pageObjects.HomePage;
+import pageObjects.HomePageSelenide;
 
 import java.util.concurrent.TimeUnit;
 
+import static enums.Users.PITER_CHAILOVSKII;
 import static java.lang.System.setProperty;
 import static org.testng.Assert.assertEquals;
 
@@ -22,7 +23,7 @@ import static org.testng.Assert.assertEquals;
 public class SimpleTestPageObject {
 
     private WebDriver driver = new ChromeDriver();
-    private HomePage homePage = PageFactory.initElements(driver, HomePage.class);
+    private HomePageSelenide homePage = PageFactory.initElements(driver, HomePageSelenide.class);
 
     @BeforeClass
     public void beforeClass() {
@@ -53,7 +54,7 @@ public class SimpleTestPageObject {
         assertEquals(driver.getTitle(), "Home Page");
 
         // 4. Login
-        homePage.login("epam", "1234");
+        homePage.login(PITER_CHAILOVSKII);
 
         // 5. Assert the main title text
         WebElement mainTitle = driver.findElement(By.cssSelector("h3.main-title"));
