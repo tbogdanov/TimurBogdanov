@@ -8,6 +8,8 @@ import enums.Users;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
+import java.util.stream.Collectors;
+
 import static com.codeborne.selenide.CollectionCondition.texts;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
@@ -71,7 +73,7 @@ public class HomePageSelenide {
     @FindBy(css = ".fa-caret-down")
     private SelenideElement leftServiceDropdown;
 
-    @FindBy(css = ".wrapper .sub > li > a")
+    @FindBy(css = "li.menu-title:nth-child(3) > ul:nth-child(2) > li > a")
     private ElementsCollection leftServiceMenu;
 
     @FindBy(css = ".nav a[href = 'different-elements.html']")
@@ -125,7 +127,7 @@ public class HomePageSelenide {
     public void checkLeftServiceMenu() {
         leftServiceDropdown.click();
 
-         leftServiceMenu.shouldHave(texts(ServiceOptions.getDisplayNames()));
+        leftServiceMenu.shouldHave(texts(ServiceOptions.getDisplayNames()));
 
         for (SelenideElement element : leftServiceMenu) {
             element.shouldBe(visible);
@@ -135,7 +137,8 @@ public class HomePageSelenide {
     public void checkHeaderServiceMenu() {
         headerServiceDropdown.click();
 
-        headerServiceMenu.shouldHave(texts(ServiceOptions.getDisplayNames()));
+        headerServiceMenu.shouldHave(texts(ServiceOptions.getDisplayNames()
+                .stream().map(name -> name.toUpperCase()).collect(Collectors.toList())));
         for (SelenideElement element : headerServiceMenu) {
             element.shouldBe(visible);
         }

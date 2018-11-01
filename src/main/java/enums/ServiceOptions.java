@@ -9,8 +9,10 @@ public enum ServiceOptions {
     DATES("Dates"),
     COMPLEX_TABLE("Complex Table"),
     SIMPLE_TABLE("Simple Table"),
-    TABLES_PAGES("Tables With Pages"),
-    DIFFERENT_ELEMENTS("Different Elements");
+    USER_TABLE("User Table"),
+    TABLE_PAGES("Table with Pages"),
+    DIFFERENT_ELEMENTS("Different elements"),
+    PERFORMANCE("Performance");
 
     private String displayName;
 
