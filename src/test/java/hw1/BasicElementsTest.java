@@ -12,9 +12,6 @@ import org.testng.annotations.Test;
 import java.util.LinkedList;
 import java.util.List;
 
-/**
- * Created by Timur Bogdanov on 28.05.18.
- */
 public class BasicElementsTest extends TestBase {
 
     @Test

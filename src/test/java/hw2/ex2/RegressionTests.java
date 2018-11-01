@@ -12,9 +12,6 @@ import org.testng.annotations.Test;
 import java.util.LinkedList;
 import java.util.List;
 
-/**
- * Created by Timur Bogdanov on 05.06.18.
- */
 public class RegressionTests extends TestBase {
 
 

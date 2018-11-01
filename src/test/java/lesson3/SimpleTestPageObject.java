@@ -17,9 +17,6 @@ import static enums.Users.PITER_CHAILOVSKII;
 import static java.lang.System.setProperty;
 import static org.testng.Assert.assertEquals;
 
-/**
- * Created by Timur Bogdanov on 11.10.18.
- */
 public class SimpleTestPageObject {
 
     private WebDriver driver = new ChromeDriver();

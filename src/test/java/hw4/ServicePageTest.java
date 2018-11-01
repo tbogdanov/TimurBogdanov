@@ -1,6 +1,5 @@
 package hw4;
 
-
 import base.TestBase;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;

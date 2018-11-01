@@ -1,8 +1,5 @@
 package enums;
 
-/**
- * Created by Timur Bogdanov on 28.05.18.
- */
 public enum Users {
 
     PITER_CHAILOVSKII("PITER CHAILOVSKII", "epam", "1234");

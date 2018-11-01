@@ -1,8 +1,6 @@
 package base;
 
 import com.codeborne.selenide.Configuration;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
@@ -12,9 +10,6 @@ import java.util.HashMap;
 import static java.lang.System.currentTimeMillis;
 import static java.lang.System.setProperty;
 
-/**
- * Created by Timur Bogdanov on 15.10.18.
- */
 public class TestBase {
 
     private long time;

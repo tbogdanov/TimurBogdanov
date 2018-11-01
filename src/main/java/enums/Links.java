@@ -1,8 +1,5 @@
 package enums;
 
-/**
- * Created by Timur Bogdanov on 01.06.18.
- */
 public enum Links {
 
     HOME_PAGE("https://epam.github.io/JDI/index.html"),

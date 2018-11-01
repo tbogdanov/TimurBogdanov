@@ -14,9 +14,6 @@ import java.util.List;
 
 import static java.lang.System.setProperty;
 
-/**
- * Created by Timur Bogdanov on 05.06.18.
- */
 public class AnnotatedTest extends TestBase {
 
     private WebDriver driver;

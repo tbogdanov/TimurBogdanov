@@ -2,9 +2,6 @@ package dataProviders;
 
 import org.testng.annotations.DataProvider;
 
-/**
- * Created by Timur Bogdanov on 15.10.18.
- */
 public class DataProviders {
 
     @DataProvider

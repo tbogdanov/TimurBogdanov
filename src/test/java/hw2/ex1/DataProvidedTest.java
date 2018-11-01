@@ -10,10 +10,6 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-
-/**
- * Created by Timur Bogdanov on 28.05.18.
- */
 public class DataProvidedTest extends TestBase {
 
 

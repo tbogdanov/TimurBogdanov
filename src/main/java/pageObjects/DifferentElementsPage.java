@@ -14,11 +14,6 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$$;
 import static com.codeborne.selenide.Selenide.open;
 
-
-/**
- * Created by Timur Bogdanov on 18.06.18.
- */
-
 public class DifferentElementsPage {
 
     private final String pageUrl = "https://epam.github.io/JDI/different-elements.html";

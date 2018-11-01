@@ -1,8 +1,5 @@
 package enums;
 
-/**
- * Created by Timur Bogdanov on 01.06.18.
- */
 public enum Strings {
 
     HOME_PAGE_TITLE("Home Page"),
