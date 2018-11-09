@@ -144,9 +144,5 @@ public class HomePage {
         Assert.assertTrue(logo.isDisplayed());
     }
 
-    public void leaveIframe(WebDriver driver) {
-        driver.switchTo().defaultContent();
-    }
-
 }
 

@@ -2,17 +2,14 @@ package pageObjects;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
-import enums.Strings;
 import enums.differentElementsNames.Checkboxes;
 import enums.differentElementsNames.DropdownEntries;
 import enums.differentElementsNames.RadioButtons;
-import enums.differentElementsNames.Statuses;
 import org.openqa.selenium.support.FindBy;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$$;
-import static com.codeborne.selenide.Selenide.open;
 
 public class DifferentElementsPage {
 
@@ -42,14 +39,6 @@ public class DifferentElementsPage {
     @FindBy(css = ".logs li")
     private ElementsCollection logEntries;
 
-    public void openDifferentElements() {
-        open(pageUrl);
-    }
-
-    public void checkTitle() {
-        title.shouldHave(text(Strings.DIFFERENT_ELEMENTS_TITLE.toString()));
-    }
-
     public void checkInternalElements() {
         checkboxes.shouldHaveSize(4);
         radios.shouldHaveSize(4);
@@ -65,7 +54,7 @@ public class DifferentElementsPage {
         rightSection.shouldBe(visible);
     }
 
-    public void checkCheckboxLogEntries(Statuses status, Checkboxes... selected) {
+    public void checkCheckboxLogEntries(boolean status, Checkboxes... selected) {
         /* We should check log entries in the reverse order.
            $$(...) was used instead of dedicated ElementsCollection because
            the latter one doesn't update itself and we get older lines.
@@ -73,7 +62,7 @@ public class DifferentElementsPage {
          */
         int logIndex = selected.length-1;
         for (Checkboxes cb : selected) {
-            String expectedEntry = String.format("%s: condition changed to %s", cb.toString(), status.toString());
+            String expectedEntry = String.format("%s: condition changed to %s", cb.toString(), Boolean.toString(status));
             $$(".logs li").get(logIndex).shouldHave(text(expectedEntry));
             logIndex--;
         }

@@ -8,7 +8,6 @@ import org.testng.Assert;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$$;
 
-
 public class DatesPage {
 
     private final String pageUrl = "https://epam.github.io/JDI/dates.html";
@@ -58,10 +57,7 @@ public class DatesPage {
 
         /* Ensure we don't move the left slider to the right slider
          * because the right slider will stop the movement of the left one.
-         * If we do, move the right slider first.
-         * We have a special condition where positionLeft == positionRight == 100,
-         * in this case we move the left slider first.
-         */
+         * If we do, move the right slider first. */
         if (newPositionLeft <= positionRight) {
             Selenide.actions().dragAndDropBy(sliderLeftHandle, leftXOffset, 0).build().perform();
             Selenide.actions().dragAndDropBy(sliderRightHandle, rightXOffset, 0).build().perform();
@@ -77,9 +73,13 @@ public class DatesPage {
 
         double step = sliderWidth / sliderMaxSteps;
 
-        int positionShift = newPosition - fromPosition - 1;
-
-        return (int) (positionShift * step);
+        int positionShift = newPosition - fromPosition;
+        double xOffset = positionShift * step - 1;
+        if (positionShift >= 0) {
+            return (int) Math.ceil(xOffset);
+        } else {
+            return (int) Math.floor(xOffset);
+        }
     }
 
     public void checkSliderLogEntries(int positionLeft, int positionRight) {
@@ -87,9 +87,7 @@ public class DatesPage {
         /* We should check log entries in the reverse order.
          * $$(...) was used instead of dedicated ElementsCollection because
          * the latter one doesn't update itself and we get older lines.
-         * $$(...) always updates the requested node!
-         */
-
+         * $$(...) always updates the requested node! */
         String expectedEntryFrom = String.format("%s(From):%d link clicked", sliderName, positionLeft);
         String expectedEntryTo = String.format("%s(To):%d link clicked", sliderName, positionRight);
 

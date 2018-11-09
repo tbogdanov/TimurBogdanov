@@ -14,8 +14,6 @@ import static enums.differentElementsNames.Checkboxes.WATER;
 import static enums.differentElementsNames.Checkboxes.WIND;
 import static enums.differentElementsNames.DropdownEntries.YELLOW;
 import static enums.differentElementsNames.RadioButtons.SELEN;
-import static enums.differentElementsNames.Statuses.FALSE;
-import static enums.differentElementsNames.Statuses.TRUE;
 
 public class ServicePageTest extends TestBase {
 
@@ -71,7 +69,7 @@ public class ServicePageTest extends TestBase {
 
         //S12: Assert that for each checkbox there is an individual log row
         // and value corresponded to the checked status of checkbox
-        differentElementsPage.checkCheckboxLogEntries(TRUE, WATER, WIND);
+        differentElementsPage.checkCheckboxLogEntries(true, WATER, WIND);
 
         //S13: Select radio button
         differentElementsPage.selectRadioButton(SELEN);
@@ -91,7 +89,7 @@ public class ServicePageTest extends TestBase {
 
         //S18: Assert that for each checkbox there is an individual log row
         // and value corresponded to the unchecked status of checkbox
-        differentElementsPage.checkCheckboxLogEntries(FALSE, WATER, WIND);
+        differentElementsPage.checkCheckboxLogEntries(false, WATER, WIND);
     }
 
 }

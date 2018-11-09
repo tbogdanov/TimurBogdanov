@@ -9,6 +9,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pageObjects.HomePage;
 
+import static base.Utils.leaveIframe;
 import static enums.Users.PITER_CHAILOVSKII;
 
 public class BasicElementsTest extends TestBase {
@@ -73,7 +74,7 @@ public class BasicElementsTest extends TestBase {
         homePage.checkIframeHasLogo(driver);
 
         // S14: Switch back to the page
-        homePage.leaveIframe(driver);
+        leaveIframe(driver);
 
         // S15: Assert that there is Left Section
         homePage.checkLeftSection();
