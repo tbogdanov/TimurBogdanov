@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Jenkins Suite for Homework 5" parallel="methods" thread-count="3" verbose="1">
+    <test name="HomePage, DatesPage, ServicePage tests for HW5">
+
+        <packages>
+            <package name="hw4"/>
+        </packages>
+
+        <classes>
+            <class name="hw5.BasicElementsBrokenTest"/>
+        </classes>
+
+    </test>
+</suite>

@@ -2,12 +2,20 @@ package pageObjects;
 
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Step;
+import io.qameta.allure.Story;
+import listeners.AllureAttachmentListener;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$$;
 
+@Feature("Smoke tests")
+@Story("Dates Page UI Test")
+@Listeners(AllureAttachmentListener.class)
 public class DatesPage {
 
     private final String pageUrl = "https://epam.github.io/JDI/dates.html";
@@ -31,6 +39,7 @@ public class DatesPage {
     @FindBy(css = ".ui-slider-handle:nth-of-type(2) > span")
     private SelenideElement sliderRightLabel;
 
+    @Step("Set new Range slider values using drag-n-drop")
     public void setSlider(int newPositionLeft, int newPositionRight) {
 
         int positionLeft = Integer.parseInt(sliderLeftLabel.getText());
@@ -68,6 +77,7 @@ public class DatesPage {
 
     }
 
+    @Step("Check log entries after moving Sliders")
     private int getXOffset(int fromPosition, int newPosition) {
         double sliderWidth = Double.parseDouble(slider.getCssValue("width").replace("px", ""));
 
