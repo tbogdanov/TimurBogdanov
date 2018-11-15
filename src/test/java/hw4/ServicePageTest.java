@@ -1,8 +1,12 @@
 package hw4;
 
 import base.TestBase;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
+import listeners.AllureAttachmentListener;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pageObjects.DifferentElementsPage;
 import pageObjects.HomePageSelenide;
@@ -15,6 +19,9 @@ import static enums.differentElementsNames.Checkboxes.WIND;
 import static enums.differentElementsNames.DropdownEntries.YELLOW;
 import static enums.differentElementsNames.RadioButtons.SELEN;
 
+@Feature("Smoke tests")
+@Story("Different Elements Page UI Test")
+@Listeners(AllureAttachmentListener.class)
 public class ServicePageTest extends TestBase {
 
     private HomePageSelenide homePage;

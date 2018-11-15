@@ -1,8 +1,12 @@
 package hw4;
 
 import base.TestBase;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
+import listeners.AllureAttachmentListener;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pageObjects.DatesPage;
 import pageObjects.HomePageSelenide;
@@ -11,7 +15,9 @@ import static com.codeborne.selenide.Selenide.page;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static enums.Users.PITER_CHAILOVSKII;
 
-
+@Feature("Smoke tests")
+@Story("Dates Page UI Test")
+@Listeners(AllureAttachmentListener.class)
 public class DatesPageTest extends TestBase {
     private HomePageSelenide homePage;
     private DatesPage datesPage;

@@ -4,13 +4,9 @@ import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import enums.ServiceOptions;
 import enums.Users;
-import io.qameta.allure.Feature;
 import io.qameta.allure.Step;
-import io.qameta.allure.Story;
-import listeners.AllureAttachmentListener;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
-import org.testng.annotations.Listeners;
 
 import java.util.stream.Collectors;
 
@@ -20,9 +16,6 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
-@Feature("Smoke tests")
-@Story("Home Page UI Test")
-@Listeners(AllureAttachmentListener.class)
 public class HomePageSelenide {
 
     private final String pageUrl = "https://epam.github.io/JDI/index.html";

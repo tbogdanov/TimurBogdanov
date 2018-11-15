@@ -5,20 +5,13 @@ import com.codeborne.selenide.SelenideElement;
 import enums.differentElementsNames.Checkboxes;
 import enums.differentElementsNames.DropdownEntries;
 import enums.differentElementsNames.RadioButtons;
-import io.qameta.allure.Feature;
 import io.qameta.allure.Step;
-import io.qameta.allure.Story;
-import listeners.AllureAttachmentListener;
 import org.openqa.selenium.support.FindBy;
-import org.testng.annotations.Listeners;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$$;
 
-@Feature("Smoke tests")
-@Story("Different Elements Page UI Test")
-@Listeners(AllureAttachmentListener.class)
 public class DifferentElementsPage {
 
     private final String pageUrl = "https://epam.github.io/JDI/different-elements.html";
