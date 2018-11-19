@@ -77,7 +77,6 @@ public class DatesPage {
 
     }
 
-    @Step("Check log entries after moving Sliders")
     private int getXOffset(int fromPosition, int newPosition) {
         double sliderWidth = Double.parseDouble(slider.getCssValue("width").replace("px", ""));
 
@@ -92,6 +91,7 @@ public class DatesPage {
         }
     }
 
+    @Step("Check log entries after moving Sliders")
     public void checkSliderLogEntries(int positionLeft, int positionRight) {
 
         /* We should check log entries in the reverse order.
