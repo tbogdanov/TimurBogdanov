@@ -8,7 +8,7 @@
         </packages>
 
         <classes>
-            <class name="hw5.BasicElementsBrokenTest"/>
+            <class name="hw5.ServicePageFailedTest"/>
         </classes>
 
     </test>
