@@ -77,6 +77,7 @@ public class HomePageSelenide {
         Assert.assertEquals(getWebDriver().getTitle(), "Home Page");
     }
 
+    @Step("Check if Left Service menu has proper entries")
     public void checkLeftServiceMenu() {
         leftServiceDropdown.click();
 
